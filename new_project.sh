@@ -18,6 +18,9 @@ mkdir	$PROJECT_DIR \
 		$PROJECT_DIR/$INCLUDE_DIR \
 		$PROJECT_DIR/$SRC_DIR
 
+# generating the "main" file:
+touch $PROJECT_DIR/$SRC_DIR/${PROJECT_NAME}_main_file
+
 # generating the Makefile:
 touch $PROJECT_DIR/Makefile
 
