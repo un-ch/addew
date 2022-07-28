@@ -18,17 +18,6 @@ mkdir	$PROJECT_DIR \
 		$PROJECT_DIR/$INCLUDE_DIR \
 		$PROJECT_DIR/$SRC_DIR
 
-# generating the "main" file:
-touch $PROJECT_DIR/$SRC_DIR/$PROJECT_NAME.c
-cat > $PROJECT_DIR/$SRC_DIR/$PROJECT_NAME.c << EOF
-
-
-int main()
-{
-	return ;
-}
-EOF
-
 # generating the Makefile:
 touch $PROJECT_DIR/Makefile
 
