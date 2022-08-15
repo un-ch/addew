@@ -3,7 +3,6 @@ Current script generates: <br>
 -Makefile; <br>
 -gitignore file. <br>
 <br>
-We assume that default new project is written on C language; <br>
 <br>command:
 <br>
 <code>./new_project foo_prj_name</code>
