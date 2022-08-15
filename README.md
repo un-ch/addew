@@ -10,9 +10,9 @@ Current script generates: <br>
 <br>
 <code>foo_prj/:</code>
 <br>
-<code>foo_prj/Makefile</code> <br>
+<code>foo_prj/Makefile</code>
 <br>
-<code>foo_prj/.gitignore</code> <br>
+<code>foo_prj/.gitignore</code>
 <br>
 <code>foo_prj/build/</code>
 <br>
@@ -21,6 +21,7 @@ Current script generates: <br>
 <code>foo_prj/src/</code>
 <br>
 <code>foo_prj/src/foo_prj</code>
+<br>
 <br>
 Note, that if you want to have a singe-file project, you should
 <br>
