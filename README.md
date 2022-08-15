@@ -5,20 +5,22 @@ Current script generates: <br>
 <br>
 <br>command:
 <br>
-<code>./new_project foo_prj_name</code>
+<code>./new_project foo_prj</code>
 <br>result:
 <br>
-<code>foo_prj_name/</code>
+<code>foo_prj/:</code>
 <br>
-<code>|__Makefile</code>
+<code>foo_prj/Makefile</code> <br>
 <br>
-<code>|_.gitignore</code>
+<code>foo_prj/.gitignore</code> <br>
 <br>
-<code>|__build/</code>
+<code>foo_prj/build/</code>
 <br>
-<code>|__include/</code>
+<code>foo_prj/include/</code>
 <br>
-<code>|__src/</code> <br>
+<code>foo_prj/src/</code>
+<br>
+<code>foo_prj/src/foo_prj</code>
 <br>
 Note, that if you want to have a singe-file project, you should
 <br>
