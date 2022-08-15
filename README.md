@@ -1,7 +1,7 @@
 Current script generates: <br>
 -initial directories structure; <br>
 -Makefile; <br>
--gitignore file. <br>
+-gitignore file.
 <br>
 <br>command:
 <br>
