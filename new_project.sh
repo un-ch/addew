@@ -13,20 +13,24 @@ INCLUDE_DIR=include
 SRC_DIR=src
 
 # generating directories:
-mkdir	$PROJECT_DIR \
-		$PROJECT_DIR/$BUILD_DIR \
-		$PROJECT_DIR/$INCLUDE_DIR \
-		$PROJECT_DIR/$SRC_DIR
+mkdir -p	$PROJECT_DIR \
+			$PROJECT_DIR/$BUILD_DIR \
+			$PROJECT_DIR/$INCLUDE_DIR \
+			$PROJECT_DIR/$SRC_DIR
 
 # generating the "main" file:
-touch $PROJECT_DIR/$SRC_DIR/${PROJECT_NAME}_main_file
+touch $PROJECT_DIR/$SRC_DIR/$PROJECT_NAME
 
 # generating the Makefile:
 touch $PROJECT_DIR/Makefile
 
 cat > $PROJECT_DIR/Makefile << EOF
-CC			=	gcc
-CFLAGS		=	-Wall -g -I
+CC	=	gcc
+CFLAGS	=	-Wall -g -I
+LIBS	=
+
+SRC_FILE_EXTENSION = .c
+HEADER_FILE_EXTERNSION = .h
 
 # directories definitions:
 BUILD_DIR	=	build
@@ -34,18 +38,18 @@ INCLUDE_DIR	=	include
 SRC_DIR		=	src
 
 # modules enumeration:
-SRC_FILES	=	\$(SRC_DIR)/.c
+SRC_FILES	=	\$(SRC_DIR)/\$(SRC_FILE_EXTENSION)
 
 # set object files to the build directory:
-OBJECT_FILES=	\$(subst \$(SRC_DIR),\$(BUILD_DIR),\$(SRC_FILES:.c=.o))
+OBJECT_FILES=	\$(subst \$(SRC_DIR),\$(BUILD_DIR),\$(SRC_FILES:\$(SRC_FILE_EXTENSION)=.o))
 
-HEADER_FILES=	\$(wildcard \$(INCLUDE_DIR)/*.h)
+HEADER_FILES=	\$(wildcard \$(INCLUDE_DIR)/*\$(HEADER_FILE_EXTERNSION)
 
-\$(BUILD_DIR)/%.o: \$(SRC_DIR)/%.c \$(INCLUDE_DIR)/%.h
+\$(BUILD_DIR)/%.o: \$(SRC_DIR)/%\$(SRC_FILE_EXTENSION) \$(INCLUDE_DIR)/%\$(HEADER_FILE_EXTERNSION)
 	@\$(CC) \$(CFLAGS)\$(INCLUDE_DIR) -c \$< -o \$@
 
 # targets:
-$PROJECT_NAME: \$(SRC_DIR)/$PROJECT_NAME.c \$(OBJECT_FILES)
+$PROJECT_NAME: \$(SRC_DIR)/$PROJECT_NAME\$(SRC_FILE_EXTENSION) \$(OBJECT_FILES)
 	@\$(CC) \$(CFLAGS) \$(INCLUDE_DIR) \$^ -o \$(BUILD_DIR)/\$@
 
 .PHONY: run
@@ -64,13 +68,6 @@ EOF
 # generating the .gitignore file:
 	touch $PROJECT_DIR/.gitignore
 	cat > $PROJECT_DIR/.gitignore << EOF
-# The gitignore file specifies intentionally untracked files that Git
-# should ignore.
+# The gitignore file specifies intentionally untracked files that Git should ignore.
 #
-
-*
-!Makefile
-!*.c
-!*.h
-!*/
 EOF
