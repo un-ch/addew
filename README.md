@@ -5,10 +5,9 @@
 <li>gitignore file.</li>
 </ul>
 
-<br>command:
-<br>
-<code>./new_project foo_prj</code>
-<br>result:
+### Command:<br>
+<code>./new_project foo_prj</code><br>
+#### Result:
 <br>
 <code>foo_prj/:</code>
 <br>
