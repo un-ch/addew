@@ -1,8 +1,8 @@
-## Current script generates: <br>
+### Current script generates: <br>
 <ul>
-<li>- initial directories structure;</li>
-<li>- Makefile;</li>
-<li>- gitignore file.</li>
+<li>initial directories structure;</li>
+<li>Makefile;</li>
+<li>gitignore file.</li>
 </ul>
 
 <br>command:
