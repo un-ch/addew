@@ -1,8 +1,10 @@
-Current script generates: <br>
--initial directories structure; <br>
--Makefile; <br>
--gitignore file.
-<br>
+## Current script generates: <br>
+<ul>
+<li>- initial directories structure;</li>
+<li>- Makefile;</li>
+<li>- gitignore file.</li>
+</ul>
+
 <br>command:
 <br>
 <code>./new_project foo_prj</code>
