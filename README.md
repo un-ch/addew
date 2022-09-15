@@ -5,24 +5,16 @@
 <li>gitignore file.</li>
 </ul>
 
-### Command:<br>
-<code>./new_project foo_prj</code><br>
+#### Command:
+<code>./new_project foo_prj</code>
 #### Result:
-<br>
-<code>foo_prj/:</code>
-<br>
-<code>foo_prj/Makefile</code>
-<br>
-<code>foo_prj/.gitignore</code>
-<br>
-<code>foo_prj/build/</code>
-<br>
-<code>foo_prj/include/</code>
-<br>
-<code>foo_prj/src/</code>
-<br>
-<code>foo_prj/src/foo_prj</code>
-<br>
+<code>foo_prj/</code><br>
+<code>foo_prj/Makefile</code><br>
+<code>foo_prj/.gitignore</code><br>
+<code>foo_prj/build/</code><br>
+<code>foo_prj/include/</code><br>
+<code>foo_prj/src/</code><br>
+<code>foo_prj/src/foo_prj</code><br>
 <br>
 Note, that if you want to have a singe-file project, you should
 <br>
