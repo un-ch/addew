@@ -1,5 +1,5 @@
-### <b>p</b>roj<b>add</b>y
-### Current script generates: <br>
+<b>p</b>roj<b>add</b>y
+#### Current script generates: <br>
 <ul>
 <li>initial directories structure;</li>
 <li>Makefile;</li>
