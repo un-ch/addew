@@ -1,4 +1,4 @@
-###addew - add new project
+### addew - add new project
 #### Current script generates: <br>
 <ul>
 <li>initial directories structure;</li>
