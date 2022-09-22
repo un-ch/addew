@@ -1,4 +1,4 @@
-<b>p</b>roj<b>add</b>y
+###addew - add new project
 #### Current script generates: <br>
 <ul>
 <li>initial directories structure;</li>
