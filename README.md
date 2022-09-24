@@ -7,7 +7,7 @@
 </ul>
 
 #### Command:
-<code>./new_project foo_prj</code>
+<code>./addew foo_prj</code>
 #### Result:
 <code>foo_prj/</code><br>
 <code>foo_prj/Makefile</code><br>
