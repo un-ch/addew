@@ -71,3 +71,14 @@ EOF
 # The gitignore file specifies intentionally untracked files that Git should ignore.
 #
 EOF
+
+# generating another .gitignore file:
+	touch $PROJECT_DIR/$BUILD_DIR/.gitignore
+	cat > $PROJECT_DIR/$BUILD_DIR/.gitignore << EOF
+# The gitignore file specifies intentionally untracked files that Git should ignore.
+#
+# ignore everything in this directory
+*
+# except this file:
+!.gitignore
+EOF
