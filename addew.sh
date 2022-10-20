@@ -12,6 +12,8 @@ BUILD_DIR=build
 INCLUDE_DIR=include
 SRC_DIR=src
 
+SRC_FILE_EXTENSION=.c
+
 # generating directories:
 mkdir -p	$PROJECT_DIR \
 			$PROJECT_DIR/$BUILD_DIR \
@@ -19,7 +21,7 @@ mkdir -p	$PROJECT_DIR \
 			$PROJECT_DIR/$SRC_DIR
 
 # generating the "main" file:
-touch $PROJECT_DIR/$SRC_DIR/$PROJECT_NAME
+touch $PROJECT_DIR/$SRC_DIR/$PROJECT_NAME$SRC_FILE_EXTENSION
 
 # generating the Makefile:
 touch $PROJECT_DIR/Makefile
