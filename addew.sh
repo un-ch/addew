@@ -27,9 +27,9 @@ touch $PROJECT_DIR/$SRC_DIR/$PROJECT_NAME$SRC_FILE_EXTENSION
 touch $PROJECT_DIR/Makefile
 
 cat > $PROJECT_DIR/Makefile << EOF
-CC	=	gcc
-CFLAGS	=	-Wall -g -I
-LIBS	=
+CC=gcc
+CFLAGS=-Wall -g -I
+LIBS=
 
 SRC_FILE_EXTENSION = .c
 HEADER_FILE_EXTERNSION = .h
@@ -40,10 +40,15 @@ INCLUDE_DIR	=	include
 SRC_DIR		=	src
 
 # modules enumeration:
-SRC_FILES	=	\$(SRC_DIR)/\$(SRC_FILE_EXTENSION)
+# SRC_FILES	=	\$(SRC_DIR)/\$(SRC_FILE_EXTENSION)
+SRC_FILES = \$(filter-out \$(SRC_DIR)/$PROJECT_NAME$SRC_FILE_EXTENSION, \$(wildcard \$(SRC_DIR)/*$SRC_FILE_EXTENSION))
 
 # set object files to the build directory:
-OBJECT_FILES=	\$(subst \$(SRC_DIR),\$(BUILD_DIR),\$(SRC_FILES:\$(SRC_FILE_EXTENSION)=.o))
+OBJECT_FILES=\
+	\$(subst \$(SRC_DIR),\
+	\$(BUILD_DIR),\
+	\$(SRC_FILES:\
+	\$(SRC_FILE_EXTENSION)=.o))
 
 HEADER_FILES=	\$(wildcard \$(INCLUDE_DIR)/*\$(HEADER_FILE_EXTERNSION)
 
@@ -51,7 +56,7 @@ HEADER_FILES=	\$(wildcard \$(INCLUDE_DIR)/*\$(HEADER_FILE_EXTERNSION)
 	@\$(CC) \$(CFLAGS)\$(INCLUDE_DIR) -c \$< -o \$@
 
 # targets:
-$PROJECT_NAME: \$(SRC_DIR)/$PROJECT_NAME\$(SRC_FILE_EXTENSION) \$(OBJECT_FILES) \$(LIBS)
+$PROJECT_NAME: \$(SRC_DIR)/$PROJECT_NAME\$(SRC_FILE_EXTENSION) \$(OBJECT_FILES) -l\$(LIBS)
 	@\$(CC) \$(CFLAGS) \$(INCLUDE_DIR) \$^ -o \$(BUILD_DIR)/\$@
 
 .PHONY: run
@@ -62,9 +67,9 @@ run: $PROJECT_NAME
 clean:
 	@rm -f	\$(BUILD_DIR)/*.o \$(BUILD_DIR)/$PROJECT_NAME
 
-.PHONY: delete_files
-delete_files:
-	@rm -f	\$(BUILD_DIR)/* \$(SRC_DIR)/* \$(INCLUDE_DIR)/*
+.PHONY: tags
+tags:
+	@ctags \$(INCLUDE_DIR)/*\$(SRC_FILE_EXTENSION) \$(SRC_DIR)/*\$(SRC_FILE_EXTENSION)
 EOF
 
 # generating the .gitignore file:
