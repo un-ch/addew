@@ -1,4 +1,4 @@
-### addew /a'dju:/ - add new project
+### addew /a'dju:/ - add a new project
 #### Current script generates: <br>
 <ul>
 <li>initial directories structure;</li>
