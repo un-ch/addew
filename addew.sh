@@ -27,8 +27,8 @@ touch $PROJECT_DIR/$SRC_DIR/$PROJECT_NAME$SRC_FILE_EXTENSION
 touch $PROJECT_DIR/Makefile
 
 cat > $PROJECT_DIR/Makefile << EOF
-CC=gcc
-CFLAGS=-Wall -g -I
+CC=gcc -ansi -fdiagnostics-color=always -fno-diagnostics-show-caret
+CFLAGS=-Wall -ggdb -I
 LIBS=
 
 SRC_FILE_EXTENSION = .c
