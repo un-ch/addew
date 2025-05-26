@@ -13,5 +13,5 @@
 <code>|--- Makefile</code><br>
 <code>|--- .gitignore</code><br>
 <code>|--- src/</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;|--- Makefile</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;|--- main.c</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- Makefile</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--- main.c</code><br>
