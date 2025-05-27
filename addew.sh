@@ -16,7 +16,7 @@ mkdir -p	"$PROJ_DIR" "$PROJ_DIR/$SRC_DIR"
 
 cd "$PROJ_DIR" || exit
 
-#### general Makefile generating: ####
+#### top-level Makefile generating: ####
 cat > Makefile << EOF
 #
 
