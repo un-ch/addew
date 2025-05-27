@@ -5,17 +5,16 @@ if [ "$1" = "" ]; then
 	exit 1;
 fi
 
-PROJECT_DIR=$1
-PROJECT_NAME=$1
+PROJ_DIR=$1
 PROJ_MAIN_BIN=$1
 SRC_DIR=src
 
 #### generating directories: ####
-mkdir -p	$PROJECT_DIR \
-		$PROJECT_DIR/$SRC_DIR
+mkdir -p	"$PROJ_DIR" "$PROJ_DIR/$SRC_DIR"
+
 # ---------------------------------- #
 
-cd $PROJECT_DIR
+cd "$PROJ_DIR" || exit
 
 #### general Makefile generating: ####
 cat > Makefile << EOF
@@ -50,7 +49,7 @@ cat > .gitignore << EOF
 EOF
 # ---------------------------------- #
 
-cd $SRC_DIR
+cd "$SRC_DIR" || exit
 
 #### Makefile generating: ####
 cat > Makefile << EOF
